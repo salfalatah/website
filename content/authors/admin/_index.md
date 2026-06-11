@@ -43,7 +43,7 @@ social:
   link: https://github.com/salfalatah
 - icon: cv
   icon_pack: ai
-  link: files/AlFalatah_CV_04_26.pdf
+  link: "/files/AlFalatah_CV_04_26.pdf"
 superuser: true
 user_groups:
 - Researchers
