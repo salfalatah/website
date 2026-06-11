@@ -25,7 +25,7 @@ interests:
 title: Sarah Al Falatah
 name: Sarah Al Falatah
 organizations:
-- name: University of Nebraska at Omaha
+name: University of Nebraska at Omaha
   url:   url: https://www.unomaha.edu/college-of-public-affairs-and-community-service/criminology-and-criminal-justice/about-us/sarah-al-falatah.php
 role: Doctoral Candidate
 social:
