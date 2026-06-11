@@ -1,8 +1,8 @@
 ---
 authors:
 - admin
-bio: My research interests include health criminology, particularly mental and physical health with a secondary focus on program evaluations. 
-  shootings.
+bio: My research interests include health criminology, particularly mental and physical health with a secondary focus on program evaluations.
+
 education:
   courses:
   - course: PhD in Criminology and Criminal Justice
@@ -14,7 +14,9 @@ education:
   - course: BS in Biomedical Sciences
     institution: University of South Florida
     year: 2021
+    
 email: salfalatah@unomaha.edu
+
 interests:
 - Heallth Criminology
 - Violence Prevention 
