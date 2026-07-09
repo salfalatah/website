@@ -115,7 +115,7 @@ function Home() {
         {/* Photo */}
         <div className="shrink-0">
           <img
-            src="/headshot-on-white.jpg"
+            src="/headshot.jpg"
             alt="Sarah Al Falatah"
             className="w-48 h-56 object-cover rounded-2xl shadow-sm border border-border"
           />
