@@ -25,7 +25,7 @@ function CV() {
 
       <p className="text-sm text-muted-foreground mt-6 text-center">
         This CV is updated regularly. You can also{' '}
-        
+        <a
           href="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/export?format=pdf"
           className="underline hover:opacity-80"
         >
