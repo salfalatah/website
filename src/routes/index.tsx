@@ -26,7 +26,7 @@ const CONTACT_LINKS = [
   },
   {
     label: 'LinkedIn',
-    href: 'https://www.linkedin.com/in/sarah-al-falatah',
+    href: 'https://www.linkedin.com/in/sarah-al-falatah-275925137/',
     display: 'https://www.linkedin.com/in/sarah-al-falatah',
     icon: (
       <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true">
