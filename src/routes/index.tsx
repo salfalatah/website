@@ -136,14 +136,14 @@ function Home() {
         </div>
       </section>
 
-      {/* News section */}
+      {/* Updates section */}
       <section>
-        <h2 className="text-2xl font-semibold text-foreground mb-4">News</h2>
+        <h2 className="text-2xl font-semibold text-foreground mb-4">Updates</h2>
         <div className="space-y-3">
           {[
-            { date: '2026', text: 'Paper accepted at [Conference Name].' },
-            { date: 'January 2026', text: 'Started [fellowship/award/new project].' },
-            { date: 'September 2025', text: 'Presented work at [Workshop/Seminar Name].' },
+            { date: 'June 2026', text: 'Completed a 4-Day Data Visualization Workshop' },
+            { date: 'March 2026', text: 'Doctoral Student Summit Fellow, ACJS' },
+            { date: 'October 2025', text: 'Awarded a Graduate Research and Creative Activity Grant' },
           ].map((item, i) => (
             <div key={i} className="flex gap-4 text-sm">
               <span className="text-muted-foreground whitespace-nowrap w-28 shrink-0">{item.date}</span>
