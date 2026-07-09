@@ -8,11 +8,11 @@ const jobs = defineCollection({
   schema: z.object({
     jobTitle: z.string(),
     summary: z.string(),
-    startDate: z.string(),
+  startDate: z.string().optional(),
     endDate: z.string().optional(),
     company: z.string(),
     location: z.string(),
-    tags: z.array(z.string()),
+    tags: z.array(z.string()).optional().default([]),
     content: z.string(),
   }),
 })
@@ -24,9 +24,9 @@ const education = defineCollection({
   schema: z.object({
     school: z.string(),
     summary: z.string(),
-    startDate: z.string(),
+   startDate: z.string().optional(),
     endDate: z.string().optional(),
-    tags: z.array(z.string()),
+   tags: z.array(z.string()).optional().default([]),
     content: z.string(),
   }),
 })
@@ -39,7 +39,7 @@ const blog = defineCollection({
     title: z.string(),
     date: z.string(),
     summary: z.string(),
-    tags: z.array(z.string()),
+tags: z.array(z.string()).optional().default([]),
     author: z.string(),
     content: z.string(),
   }),
