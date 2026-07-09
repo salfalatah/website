@@ -7,7 +7,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Dr. Your Name' },
+      { title: 'Sarah Al Falatah' },
     ],
   }),
   shellComponent: RootDocument,
@@ -33,7 +33,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
       <header className="border-b border-border bg-background">
         <div className="max-w-4xl mx-auto px-4 py-4 flex items-center justify-between">
           <Link to="/" className="text-lg font-semibold text-foreground hover:text-primary transition-colors">
-            Your Name
+            Sarah Al Falatah
           </Link>
           <nav className="flex items-center gap-6">
             <Link
@@ -68,7 +68,7 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
       </main>
       <footer className="border-t border-border mt-12">
         <div className="max-w-4xl mx-auto px-4 py-6 text-center text-sm text-muted-foreground">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} Sarah Al Falatah. All rights reserved.
         </div>
       </footer>
     </div>
