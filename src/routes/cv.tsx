@@ -1,5 +1,4 @@
-import { Separator } from '@/components/ui/separator'
-import { Badge } from '@/components/ui/badge'
+import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/cv')({
   component: CV,
@@ -7,28 +6,32 @@ export const Route = createFileRoute('/cv')({
 
 function CV() {
   return (
-    <div className="max-w-3xl mx-auto px-4 py-16 text-center">
-      <h1 className="text-4xl font-bold mb-4">
-        Curriculum Vitae
-      </h1>
+    <div className="max-w-4xl mx-auto px-4 py-16">
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-bold mb-4">
+          Curriculum Vitae
+        </h1>
+        <p className="text-lg text-muted-foreground">
+          My current curriculum vitae includes my education, research experience,
+          publications, presentations, teaching, awards, and professional service.
+        </p>
+      </div>
 
-      <p className="text-lg text-muted-foreground mb-8">
-        My current curriculum vitae includes my education, research experience,
-        publications, presentations, teaching, awards, and professional service.
-      </p>
+      <iframe
+        src="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/preview"
+        className="w-full h-[1000px] rounded-lg border shadow-sm"
+        title="Curriculum Vitae"
+      />
 
-      <a
-        href="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/preview"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:opacity-90 transition"
-      >
-        <Download size={18} />
-        View My CV
-      </a>
-
-      <p className="text-sm text-muted-foreground mt-6">
-        The CV opens in a new tab and is updated regularly.
+      <p className="text-sm text-muted-foreground mt-6 text-center">
+        This CV is updated regularly. You can also{' '}
+        
+          href="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/export?format=pdf"
+          className="underline hover:opacity-80"
+        >
+          download it as a PDF
+        </a>
+        .
       </p>
     </div>
   )
