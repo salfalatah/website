@@ -92,21 +92,19 @@ function Home() {
   Intervention Program (HVIP).
           </p>
 
-          {/* Contact links */}
-          <div className="space-y-2 pt-2">
+  {/* Contact links — icons only */}
+          <div className="flex items-center gap-4 pt-3">
             {CONTACT_LINKS.map((link) => (
-              <a
+              
                 key={link.label}
                 href={link.href}
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors group"
+                aria-label={link.label}
+                title={link.label}
+                className="text-muted-foreground hover:text-primary transition-colors"
               >
-                <span className="text-muted-foreground group-hover:text-foreground transition-colors">
-                  {link.icon}
-                </span>
-                <span className="font-medium w-28 shrink-0">{link.label}:</span>
-                <span className="text-primary hover:underline">{link.display}</span>
+                {link.icon}
               </a>
             ))}
           </div>
