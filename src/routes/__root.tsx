@@ -98,12 +98,14 @@ function SiteLayout({ children }: { children: React.ReactNode }) {
             >
               Teaching
             </Link>
-            <Link
-              to="/cv"
-              className="text-sm font-medium hover:opacity-80 transition-opacity [&.active]:underline underline-offset-4"
+            <a
+              href="/AlFalatah_CV.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium hover:opacity-80 transition-opacity"
             >
               CV
-            </Link>
+            </a>
             <ThemeToggle />
           </nav>
         </div>
