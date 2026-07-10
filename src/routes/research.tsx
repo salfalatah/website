@@ -1,6 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Badge } from '@/components/ui/badge'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Separator } from '@/components/ui/separator'
 import { ExternalLink } from 'lucide-react'
 
@@ -8,48 +7,220 @@ export const Route = createFileRoute('/research')({
   component: Research,
 })
 
-const PUBLICATIONS = [
+// Bolds "Al Falatah" wherever it appears in an author list.
+function highlightName(authors: string) {
+  return authors.split(/(Al Falatah)/g).map((part, i) =>
+    part === 'Al Falatah' ? (
+      <strong key={i} className="text-foreground font-semibold">
+        {part}
+      </strong>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  )
+}
+
+// To add a link to any entry, set its `link` to the real URL (replace '#').
+const PEER_REVIEWED = [
   {
-    title: 'Your Paper Title Here',
-    authors: 'Your Name, Co-Author Name, Senior Author Name',
-    venue: 'Proceedings of [Conference Name] (CONF), 2025',
-    links: [
-      { label: 'PDF', href: '#' },
-      { label: 'arXiv', href: '#' },
-      { label: 'Code', href: '#' },
-    ],
-    tags: ['Topic A', 'Topic B'],
-    highlight: true,
-  },
-  {
-    title: 'Another Paper Title',
-    authors: 'Co-Author Name, Your Name, Other Author Name',
-    venue: 'Journal of [Field] ([JF]), 2024',
-    links: [
-      { label: 'PDF', href: '#' },
-      { label: 'DOI', href: '#' },
-    ],
-    tags: ['Topic C'],
-    highlight: false,
+    year: '2025',
+    authors: 'Vietto, N., Armstrong, T., Schroll, D., & Al Falatah, S.',
+    title:
+      'Differences in associations between autonomic nervous system activity and psychopathic traits across stress paradigms and measures.',
+   venue: 'Psychopathology & Behavioral Assessment, 47(1), 1–12.',
+    link: 'https://link.springer.com/article/10.1007/s10862-024-10185-6',
   },
 ]
 
-const PROJECTS = [
+const UNDER_REVIEW = [
   {
-    title: 'Research Project 1',
-    description:
-      'A brief description of this ongoing research project, what problem it addresses, and what methods or approaches you are using.',
-    status: 'Ongoing',
-    tags: ['Method A', 'Domain B'],
-  },
-  {
-    title: 'Research Project 2',
-    description:
-      'A brief description of a completed or past project. Summarize contributions and outcomes in 1–2 sentences.',
-    status: 'Completed',
-    tags: ['Method C', 'Domain D'],
+    status: 'Revise & Resubmit',
+    authors: 'Al Falatah, S., Tostlebe, J., & Hashimi, S.',
+    title:
+      'Beyond risk factors: A mixed-methods study of interpersonal dynamics in suicide attempts and reattempts from police narratives.',
+    venue: 'Health & Justice.',
+    link: '',
   },
 ]
+
+const RESEARCH_REPORTS = [
+  {
+    year: '2026',
+    authors:
+      'Hamilton, Z., Tostlebe, J., Ursino, J., Gonzales, T., Hayes, A., Russell-Coprich, N., Jordan, C., Al Falatah, S., & Kigerl, A.',
+    title: 'Evaluation of electronic monitoring in Nebraska parole supervision.',
+    venue:
+      'Advancing Research in Corrections Lab, School of Criminology and Criminal Justice, University of Nebraska Omaha.',
+    note: 'Submitted to NDCS for review',
+    link: '',
+  },
+  {
+    year: '2026',
+    authors:
+      'Hamilton, Z., Tostlebe, J., Al Falatah, S., Towne, K., Ursino, J., Kigerl, A., & Campagna, M.',
+    title:
+      'Evaluation report: Sexual offense-specific treatment programming at the Nebraska Department of Correctional Services.',
+    venue:
+      'Nebraska Center for Justice Research, School of Criminology and Criminal Justice, University of Nebraska Omaha.',
+    note: 'Submitted to NDCS for review',
+    link: '',
+  },
+  {
+    year: '2025',
+    authors:
+      'Campagna, M., Spohn, R., Hamilton, Z., Al Falatah, S., Ursino, J., Gildea, B., Tostlebe, J., Hayes, A., & Towne, K.',
+    title:
+      'Evaluation report: Anger management program at the Nebraska Department of Correctional Services.',
+    venue:
+      'Nebraska Center for Justice Research, School of Criminology and Criminal Justice, University of Nebraska Omaha.',
+    note: '',
+    link: link: 'https://www.unomaha.edu/college-of-public-affairs-and-community-service/nebraska-center-for-justice-research/documents/anger-management.pdf',
+  },
+  {
+    year: '2024',
+    authors: 'Hamilton, Z., Tostlebe, J., Kigerl, A., Kobie, A., & Al Falatah, S.',
+    title:
+      'The Iowa risk & needs assessment evaluation and development: Iowa Board of Parole.',
+    venue:
+      'Nebraska Center for Justice Research, School of Criminology and Criminal Justice, University of Nebraska Omaha.',
+    note: '',
+    link: '',
+  },
+  {
+    year: '2024',
+    authors:
+      'Campagna, M., Towne, K., Spohn, R., Hamilton, Z., Tostlebe, J., Krushas, A., Gildea, B., Ursino, J., Al Falatah, S., & Hayes, A.',
+    title:
+      'Evaluation report: Violence reduction program at the Nebraska Department of Correctional Services.',
+    venue:
+      'Nebraska Center for Justice Research, School of Criminology and Criminal Justice, University of Nebraska Omaha.',
+    note: '',
+    link: link: 'https://www.unomaha.edu/college-of-public-affairs-and-community-service/nebraska-center-for-justice-research/documents/vrp-eval-report-2-2024.pdf',
+  },
+  {
+    year: '2023',
+    authors: 'Al Falatah, S., & Hashimi, S.',
+    title:
+      'The implications of the COVID-19 pandemic on attempted suicide trends.',
+    venue: 'Omaha Police Department.',
+    note: '',
+    link: '',
+  },
+]
+
+const PRESENTATIONS = [
+  {
+    year: '2026',
+    authors: 'Al Falatah, S.',
+    title:
+      'The role of co-occurring mental health, physical health, and substance use on youth arrest.',
+    venue: 'Academy of Criminal Justice Sciences, Philadelphia.',
+    note: 'Poster',
+  },
+  {
+    year: '2025',
+    authors: 'Al Falatah, S.',
+    title:
+      'The role of co-occurring mental health, physical health, and substance use on criminal behavior.',
+    venue: 'American Society of Criminology, Washington, DC.',
+    note: 'Manuscript in progress',
+  },
+  {
+    year: '2024',
+    authors: 'Al Falatah, S., Tostlebe, J., & Hashimi, S.',
+    title:
+      'How do mental health concerns impact suicide attempts? A multi-method study of police calls for service.',
+    venue: 'American Society of Criminology, San Francisco.',
+    note: 'Panel presenter',
+  },
+  {
+    year: '2024',
+    authors: 'Spohn, R., Al Falatah, S., Tostlebe, J., & Ursino, J.',
+    title:
+      'Sex offender treatment: An evaluation of the effectiveness of prison- and community-based programming.',
+    venue: 'American Society of Criminology, San Francisco.',
+    note: 'Panel presenter',
+  },
+  {
+    year: '2024',
+    authors: 'Campagna, M., Ursino, J., Al Falatah, S., & Gildea, B.',
+    title:
+      'Evaluating violence programming in prison: Comparing cognitive-behavioral and psycho-educational approaches.',
+    venue: 'American Society of Criminology, San Francisco.',
+    note: '',
+  },
+  {
+    year: '2023',
+    authors: 'Al Falatah, S., & Hashimi, S.',
+    title:
+      'The effect of COVID-19 on suicide attempt calls for police service.',
+    venue: 'American Society of Criminology, Philadelphia.',
+    note: 'Panel presenter',
+  },
+  {
+    year: '2023',
+    authors: 'Vietto, N., Armstrong, T., Schroll, D., & Al Falatah, S.',
+    title:
+      'Associations between ANS activity and psychopathic traits: A consideration of differences in association across stress task.',
+    venue: 'American Society of Criminology, Philadelphia.',
+    note: 'Poster',
+  },
+  {
+    year: '2023',
+    authors: 'Al Falatah, S., & Hashimi, S.',
+    title:
+      'The implications of the COVID-19 pandemic on attempted suicide calls for police service.',
+    venue: 'Suicide Research Symposium, Virtual.',
+    note: 'Panel presenter',
+  },
+  {
+    year: '2022',
+    authors: 'Al Falatah, S., & Hashimi, S.',
+    title:
+      'The implications of the COVID-19 pandemic on police mental health calls for service.',
+    venue: 'American Society of Criminology, Atlanta.',
+    note: 'Panel presenter',
+  },
+  {
+    year: '2022',
+    authors: 'Vietto, N., Armstrong, T., Schroll, D., & Al Falatah, S.',
+    title:
+      'The evaluation of autonomic nervous system activity and psychopathic stressor across stress conditions.',
+    venue: 'American Society of Criminology, Atlanta.',
+    note: '',
+  },
+  {
+    year: '2021',
+    authors: 'Al Falatah, S., Jaynes, C., Fox, B., & Verona, E.',
+    title:
+      'The intersection of race, mental health, and disciplinary sanctions in a rural jail.',
+    venue: 'American Society of Criminology, Chicago.',
+    note: 'Panel presenter',
+  },
+  {
+    year: '2021',
+    authors: 'Vietto, N., Armstrong, T., Schroll, D., & Al Falatah, S.',
+    title:
+      'Autonomic nervous system reactivity and traits associated with antisocial behavior.',
+    venue: 'American Society of Criminology, Chicago.',
+    note: '',
+  },
+]
+
+function LinkButton({ href }: { href: string }) {
+  if (!href || href === '#') return null
+  return (
+    
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="ml-2 inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline align-middle"
+    >
+      <ExternalLink size={12} />
+      Link
+    </a>
+  )
+}
 
 function Research() {
   return (
@@ -57,99 +228,59 @@ function Research() {
       <div>
         <h1 className="text-4xl font-bold text-foreground mb-3">Research</h1>
         <p className="text-muted-foreground leading-relaxed max-w-2xl">
-          My research addresses [broad theme]. I am particularly interested in
-          [specific angle or question], with the goal of [impact or outcome you
-          care about]. I use methods from [disciplines or methodologies].
+          My research sits at the intersection of health and criminology. I study
+          how mental and physical health operate as both precursors and
+          consequences of criminal justice involvement and victimization, with
+          ongoing work on suicide, violence intervention, and the evaluation of
+          correctional programming.
         </p>
       </div>
 
       <Separator />
 
       {/* Publications */}
-      <section className="space-y-6">
+      <section className="space-y-8">
         <h2 className="text-2xl font-semibold text-foreground">Publications</h2>
-        <div className="space-y-5">
-          {PUBLICATIONS.map((pub, i) => (
-            <div
-              key={i}
-              className={`p-5 rounded-xl border ${pub.highlight ? 'border-primary/30 bg-primary/5' : 'border-border bg-card'}`}
-            >
-              <h3 className="font-semibold text-foreground mb-1">{pub.title}</h3>
-              <p className="text-sm text-muted-foreground mb-1">{pub.authors}</p>
-              <p className="text-sm italic text-muted-foreground mb-3">{pub.venue}</p>
-              <div className="flex flex-wrap items-center gap-3">
-                {pub.links.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-                  >
-                    <ExternalLink size={12} />
-                    {link.label}
-                  </a>
-                ))}
-                <div className="flex gap-1 ml-auto">
-                  {pub.tags.map((tag) => (
-                    <Badge key={tag} variant="secondary" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
+
+        {/* Peer-reviewed */}
+        <div className="space-y-4">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Peer-Reviewed Articles
+          </h3>
+          {PEER_REVIEWED.map((p, i) => (
+            <div key={i} className="flex gap-4">
+              <span className="text-sm text-muted-foreground w-12 shrink-0">{p.year}</span>
+              <p className="text-sm leading-relaxed flex-1">
+                {highlightName(p.authors)} {p.title}{' '}
+                <span className="italic text-muted-foreground">{p.venue}</span>
+                <LinkButton href={p.link} />
+              </p>
             </div>
           ))}
         </div>
-        <p className="text-sm text-muted-foreground">
-          See my{' '}
-          <a
-            href="https://scholar.google.com/citations?user=YOURID"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary hover:underline"
-          >
-            Google Scholar profile
-          </a>{' '}
-          for a complete list.
-        </p>
-      </section>
 
-      <Separator />
-
-      {/* Current projects */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-foreground">Projects</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {PROJECTS.map((project) => (
-            <Card key={project.title}>
-              <CardHeader className="pb-3">
-                <div className="flex items-start justify-between gap-2">
-                  <CardTitle className="text-base">{project.title}</CardTitle>
-                  <Badge
-                    variant={project.status === 'Ongoing' ? 'default' : 'secondary'}
-                    className="text-xs shrink-0"
-                  >
-                    {project.status}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-3">
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-1">
-                  {project.tags.map((tag) => (
-                    <Badge key={tag} variant="outline" className="text-xs">
-                      {tag}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+        {/* Under review */}
+        <div className="space-y-4">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Under Review
+          </h3>
+          {UNDER_REVIEW.map((p, i) => (
+            <div key={i} className="flex gap-4">
+              <span className="w-12 shrink-0" />
+              <p className="text-sm leading-relaxed flex-1">
+                {highlightName(p.authors)} {p.title}{' '}
+                <span className="italic text-muted-foreground">{p.venue}</span>{' '}
+                <Badge variant="secondary" className="text-xs align-middle">
+                  {p.status}
+                </Badge>
+                <LinkButton href={p.link} />
+              </p>
+            </div>
           ))}
         </div>
-      </section>
-    </div>
-  )
-}
+
+        {/* Research reports */}
+        <div className="space-y-4">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Research Reports
+          </h3>
