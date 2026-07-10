@@ -124,7 +124,7 @@ function Home() {
           <img
             src="/headshot.jpg"
             alt="Sarah Al Falatah"
-            className="w-48 h-56 object-cover rounded-2xl shadow-sm border border-border"
+            className="w-56 h-56 object-cover rounded-full shadow-sm border border-border"
           />
         </div>
       </div>
