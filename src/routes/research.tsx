@@ -74,7 +74,7 @@ const RESEARCH_REPORTS = [
     venue:
       'Nebraska Center for Justice Research, School of Criminology and Criminal Justice, University of Nebraska Omaha.',
     note: '',
-    link: link: 'https://www.unomaha.edu/college-of-public-affairs-and-community-service/nebraska-center-for-justice-research/documents/anger-management.pdf',
+    link: 'https://www.unomaha.edu/college-of-public-affairs-and-community-service/nebraska-center-for-justice-research/documents/anger-management.pdf',
   },
   {
     year: '2024',
@@ -210,7 +210,7 @@ const PRESENTATIONS = [
 function LinkButton({ href }: { href: string }) {
   if (!href || href === '#') return null
   return (
-    
+    <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
