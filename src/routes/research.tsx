@@ -223,20 +223,6 @@ function LinkButton({ href }: { href: string }) {
   )
 }
 
-function Research() {
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-12 space-y-12">
-      <div>
-        <h1 className="text-4xl font-bold text-foreground mb-3">Research</h1>
-        <p className="text-muted-foreground leading-relaxed max-w-2xl">
-          My research sits at the intersection of health and criminology. I study
-          how mental and physical health operate as both precursors and
-          consequences of criminal justice involvement and victimization, with
-          ongoing work on suicide, violence intervention, and the evaluation of
-          correctional programming.
-        </p>
-      </div>
-
       <Separator />
 
       {/* Publications */}
