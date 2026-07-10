@@ -27,7 +27,7 @@ function CV() {
             View CV
           </a>
           <a
-            href="/cv.pdf"
+            href="/AlFalatah_CV.pdf"
             download
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-border font-medium hover:bg-muted transition-colors"
           >
