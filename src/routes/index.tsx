@@ -78,7 +78,7 @@ function Home() {
 
           <p className="text-foreground leading-relaxed">
             Welcome! I am a doctoral candidate in the{' '}
-            
+            <a
               href="https://www.unomaha.edu/college-of-public-affairs-and-community-service/criminology-and-criminal-justice/"
               target="_blank"
               rel="noopener noreferrer"
