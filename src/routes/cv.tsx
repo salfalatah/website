@@ -7,11 +7,9 @@ export const Route = createFileRoute('/cv')({
 function CV() {
   return (
     <div className="max-w-4xl mx-auto px-4 py-16">
-      <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4">
           Curriculum Vitae
         </h1>
-        <a
           
       <iframe
         src="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/preview"
