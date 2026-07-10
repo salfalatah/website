@@ -1,0 +1,32 @@
+import { createFileRoute } from '@tanstack/react-router'
+
+export const Route = createFileRoute('/cv')({
+  component: CV,
+})
+
+function CV() {
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-16">
+      <h1 className="text-4xl font-bold mb-8 text-center">
+        Curriculum Vitae
+      </h1>
+
+      <iframe
+        src="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/preview"
+        className="w-full h-[1000px] rounded-lg border shadow-sm"
+        title="Curriculum Vitae"
+      />
+
+      <p className="text-sm text-muted-foreground mt-6 text-center">
+        This CV is updated regularly. You can also{' '}
+        <a
+          href="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/export?format=pdf"
+          className="text-primary hover:underline"
+        >
+          download it as a PDF
+        </a>
+        .
+      </p>
+    </div>
+  )
+}
