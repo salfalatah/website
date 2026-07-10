@@ -76,6 +76,32 @@ function Home() {
             </p>
           </div>
 
+          {/* Photo — now above the contact icons */}
+          <div className="flex justify-center py-2">
+            <img
+              src="/headshot.jpg"
+              alt="Sarah Al Falatah"
+              className="w-56 h-56 object-cover rounded-full shadow-sm border border-border"
+            />
+          </div>
+
+          {/* Contact links — icons only, centered, pink */}
+          <div className="flex items-center justify-center gap-6">
+            {CONTACT_LINKS.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target={link.href.startsWith('mailto') ? undefined : '_blank'}
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                title={link.label}
+                className="text-primary hover:opacity-70 transition-opacity"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
+
           <p className="text-foreground leading-relaxed">
             Welcome! I am a doctoral candidate in the{' '}
             <a
@@ -100,32 +126,6 @@ function Home() {
             and effectiveness of a Hospital-Based Violence Intervention Program
             (HVIP).
           </p>
-
-          {/* Contact links — icons only, centered, pink */}
-          <div className="flex items-center justify-center gap-6 pt-4">
-            {CONTACT_LINKS.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                target={link.href.startsWith('mailto') ? undefined : '_blank'}
-                rel="noopener noreferrer"
-                aria-label={link.label}
-                title={link.label}
-                className="text-primary hover:opacity-70 transition-opacity"
-              >
-                {link.icon}
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* Photo */}
-        <div className="shrink-0 mx-auto md:mx-0">
-          <img
-            src="/headshot.jpg"
-            alt="Sarah Al Falatah"
-            className="w-56 h-56 object-cover rounded-full shadow-sm border border-border"
-          />
         </div>
       </div>
 

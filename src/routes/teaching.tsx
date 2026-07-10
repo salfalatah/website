@@ -67,7 +67,7 @@ function CourseRow({
   mode?: string
 }) {
   return (
-    <div className="flex flex-col sm:flex-row sm:gap-4 py-3 border-b border-border last:border-0">
+    <div className="flex flex-col sm:flex-row sm:gap-4">
       <span className="text-sm text-muted-foreground w-32 shrink-0">{term}</span>
       <div className="flex-1">
         <p className="text-sm font-medium text-foreground">
@@ -146,7 +146,7 @@ function Teaching() {
           {PROFESSIONAL_DEVELOPMENT.map((c, i) => (
             <div
               key={i}
-              className="flex gap-4 py-3 border-b border-border last:border-0"
+              className="flex gap-4"
             >
               <span className="text-sm text-muted-foreground w-12 shrink-0">{c.year}</span>
               <div className="flex-1">
