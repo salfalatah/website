@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { Badge } from '@/components/ui/badge'
 import { Separator } from '@/components/ui/separator'
 
@@ -7,53 +6,87 @@ export const Route = createFileRoute('/teaching')({
   component: Teaching,
 })
 
-const COURSES = [
+const UPCOMING = [
   {
-    term: 'Spring 2026',
-    role: 'Teaching Assistant',
-    code: 'DEPT 101',
-    title: 'Introduction to [Subject]',
-    university: 'Your University',
-    description:
-      'Assisted with weekly lab sections, held office hours, and graded assignments for an undergraduate introductory course in [subject].',
-    enrollment: '~120 students',
-  },
-  {
-    term: 'Fall 2025',
-    role: 'Instructor of Record',
-    code: 'DEPT 205',
-    title: 'Intermediate [Subject]',
-    university: 'Your University',
-    description:
-      'Independently designed and delivered lectures, assignments, and exams for this upper-division undergraduate course covering [topics].',
-    enrollment: '~35 students',
-  },
-  {
-    term: 'Spring 2025',
-    role: 'Teaching Assistant',
-    code: 'DEPT 302',
-    title: 'Advanced Topics in [Field]',
-    university: 'Your University',
-    description:
-      'Supported seminar discussions and mentored student research projects in this graduate-level course.',
-    enrollment: '~20 students',
+    term: 'Fall 2026',
+    code: 'CRMJST 305',
+    title: 'Criminological Theory & Policy',
+    detail: 'University of Wisconsin–Milwaukee',
+    mode: 'Online',
   },
 ]
 
-const MENTORING = [
+const INSTRUCTOR_OF_RECORD = [
   {
-    name: 'Student Name',
-    period: '2025–Present',
-    project: 'Brief description of the project or thesis topic you are mentoring them on.',
-    level: 'Undergraduate',
-  },
-  {
-    name: 'Another Student',
-    period: '2024–2025',
-    project: 'Short description of the research project this student completed under your guidance.',
-    level: 'Master\'s',
+    term: 'Summer 2025',
+    code: 'CRIM 400',
+    title: 'Mental Health and the Criminal Justice System',
+    mode: 'Online',
   },
 ]
+
+const TEACHING_ASSISTANT = [
+  {
+    term: '2023 – 2024',
+    code: 'CRCJ 2210',
+    title: 'Survey of Corrections',
+    detail: 'Dr. Jenn Tostlebe',
+    mode: 'In-person',
+  },
+  {
+    term: '2021 – 2022',
+    code: 'CRCJ 4450',
+    title: 'Gangs and Gang Control',
+    detail: 'Dr. Sadaf Hashimi',
+    mode: 'In-person',
+  },
+]
+
+const PROFESSIONAL_DEVELOPMENT = [
+  {
+    year: '2025',
+    title: 'Improving the Accessibility of Your Canvas Course',
+    detail: 'Digital Learning Course, University of Nebraska at Omaha. May 5, 2025.',
+  },
+  {
+    year: '2024',
+    title: 'Foundations of Teaching Online',
+    detail: 'Digital Learning Course, University of Nebraska at Omaha. October 25, 2024.',
+  },
+]
+
+function CourseRow({
+  term,
+  code,
+  title,
+  detail,
+  mode,
+}: {
+  term: string
+  code: string
+  title: string
+  detail?: string
+  mode?: string
+}) {
+  return (
+    <div className="flex flex-col sm:flex-row sm:gap-4 py-3 border-b border-border last:border-0">
+      <span className="text-sm text-muted-foreground w-32 shrink-0">{term}</span>
+      <div className="flex-1">
+        <p className="text-sm font-medium text-foreground">
+          <span className="text-primary">{code}</span> — {title}
+        </p>
+        {detail && (
+          <p className="text-sm text-muted-foreground mt-0.5">{detail}</p>
+        )}
+      </div>
+      {mode && (
+        <Badge variant="secondary" className="text-xs shrink-0 mt-2 sm:mt-0 self-start">
+          {mode}
+        </Badge>
+      )}
+    </div>
+  )
+}
 
 function Teaching() {
   return (
@@ -61,87 +94,99 @@ function Teaching() {
       <div>
         <h1 className="text-4xl font-bold text-foreground mb-3">Teaching</h1>
         <p className="text-muted-foreground leading-relaxed max-w-2xl">
-          I am committed to accessible, inclusive instruction that emphasizes
-          critical thinking and hands-on practice. My teaching experience spans
-          [undergraduate / graduate] courses in [general field], and I enjoy
-          mentoring students at all levels of their academic journey.
+          I teach and assist courses in criminology and criminal justice, with a
+          focus on criminological theory, corrections, and the intersection of
+          mental health and the justice system. I am committed to accessible,
+          evidence-based instruction across both online and in-person formats.
         </p>
       </div>
 
       <Separator />
 
-      {/* Courses */}
-      <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-foreground">Courses</h2>
-        <div className="space-y-4">
-          {COURSES.map((course, i) => (
-            <Card key={i}>
-              <CardHeader className="pb-3">
-                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                  <div>
-                    <CardTitle className="text-base">
-                      {course.code} — {course.title}
-                    </CardTitle>
-                    <p className="text-sm text-muted-foreground mt-0.5">
-                      {course.university}
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-2 shrink-0">
-                    <Badge
-                      variant={course.role === 'Instructor of Record' ? 'default' : 'secondary'}
-                      className="text-xs"
-                    >
-                      {course.role}
-                    </Badge>
-                    <span className="text-xs text-muted-foreground">{course.term}</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-2">
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  {course.description}
-                </p>
-                <p className="text-xs text-muted-foreground">
-                  Enrollment: {course.enrollment}
-                </p>
-              </CardContent>
-            </Card>
+      {/* Upcoming */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold text-foreground">Upcoming Courses</h2>
+        <div>
+          {UPCOMING.map((c, i) => (
+            <CourseRow
+              key={i}
+              term={c.term}
+              code={c.code}
+              title={c.title}
+              detail={c.detail}
+              mode={c.mode}
+            />
           ))}
         </div>
       </section>
 
       <Separator />
 
-      {/* Mentoring */}
+      {/* Teaching experience */}
       <section className="space-y-6">
-        <h2 className="text-2xl font-semibold text-foreground">Student Mentoring</h2>
-        <div className="space-y-4">
-          {MENTORING.map((student, i) => (
-            <div key={i} className="flex gap-4 p-4 rounded-xl border border-border bg-card">
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="font-medium text-foreground text-sm">{student.name}</span>
-                  <Badge variant="outline" className="text-xs">{student.level}</Badge>
-                </div>
-                <p className="text-sm text-muted-foreground">{student.project}</p>
-              </div>
-              <span className="text-xs text-muted-foreground whitespace-nowrap shrink-0 pt-0.5">
-                {student.period}
-              </span>
-            </div>
-          ))}
+        <h2 className="text-2xl font-semibold text-foreground">Teaching Experience</h2>
+
+        <div className="space-y-3">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Instructor of Record
+          </h3>
+          <p className="text-sm text-muted-foreground -mt-1">
+            Department of Criminology and Criminal Justice, University of Nebraska at Omaha
+          </p>
+          <div>
+            {INSTRUCTOR_OF_RECORD.map((c, i) => (
+              <CourseRow
+                key={i}
+                term={c.term}
+                code={c.code}
+                title={c.title}
+                mode={c.mode}
+              />
+            ))}
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+            Graduate Teaching Assistant
+          </h3>
+          <p className="text-sm text-muted-foreground -mt-1">
+            Department of Criminology and Criminal Justice, University of Nebraska at Omaha
+          </p>
+          <div>
+            {TEACHING_ASSISTANT.map((c, i) => (
+              <CourseRow
+                key={i}
+                term={c.term}
+                code={c.code}
+                title={c.title}
+                detail={c.detail}
+                mode={c.mode}
+              />
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Teaching philosophy */}
-      <section className="p-6 rounded-2xl bg-muted/50 border border-border">
-        <h2 className="text-xl font-semibold text-foreground mb-3">Teaching Philosophy</h2>
-        <p className="text-muted-foreground leading-relaxed text-sm">
-          Write a short paragraph here describing your teaching philosophy — what you believe
-          about learning, how you structure your courses, what methods you use, and what
-          outcomes you care about for your students. This gives prospective students and
-          hiring committees insight into your values as an educator.
-        </p>
+      <Separator />
+
+      {/* Professional development */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold text-foreground">Professional Development</h2>
+        <div>
+          {PROFESSIONAL_DEVELOPMENT.map((c, i) => (
+            <div
+              key={i}
+              className="flex gap-4 py-3 border-b border-border last:border-0"
+            >
+              <span className="text-sm text-muted-foreground w-12 shrink-0">{c.year}</span>
+              <div className="flex-1">
+                <p className="text-sm font-medium text-foreground">{c.title}</p>
+                <p className="text-sm text-muted-foreground mt-0.5">{c.detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
     </div>
   )
