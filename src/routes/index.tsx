@@ -95,7 +95,7 @@ function Home() {
   {/* Contact links — icons only */}
           <div className="flex items-center gap-4 pt-3">
             {CONTACT_LINKS.map((link) => (
-              
+              <a
                 key={link.label}
                 href={link.href}
                 target={link.href.startsWith('mailto') ? undefined : '_blank'}
