@@ -11,7 +11,7 @@ function CV() {
         <h1 className="text-4xl font-bold mb-4">
           Curriculum Vitae
         </h1>
-        
+        <a
       <iframe
         src="https://docs.google.com/document/d/1lkUjuazFn_BC_OQhjPxuVDt5mgw31IK1v6wZugfFQrY/preview"
         className="w-full h-[1000px] rounded-lg border shadow-sm"
