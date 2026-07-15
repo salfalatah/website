@@ -31,12 +31,10 @@ const PEER_REVIEWED = [
     venue: 'Psychopathology & Behavioral Assessment, 47(1), 1–12.',
     link: 'https://link.springer.com/article/10.1007/s10862-024-10185-6',
   },
-]
-
-const UNDER_REVIEW = [
-  {
-    status: 'Revise & Resubmit',
-    authors: 'Al Falatah, S., Tostlebe, J., & Hashimi, S.',
+   {
+    year: '2026',
+    status: 'Forthcoming',
+      authors: 'Al Falatah, S., Tostlebe, J., & Hashimi, S.',
     title:
       'Beyond risk factors: A mixed-methods study of interpersonal dynamics in suicide attempts and reattempts from police narratives.',
     venue: 'Health & Justice.',
