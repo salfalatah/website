@@ -251,26 +251,6 @@ function Research() {
           ))}
         </div>
 
-        {/* Under review */}
-        <div className="space-y-4">
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Under Review
-          </h3>
-          {UNDER_REVIEW.map((p, i) => (
-            <div key={i} className="flex gap-4">
-              <span className="w-12 shrink-0" />
-              <p className="text-sm leading-relaxed flex-1">
-                {highlightName(p.authors)} {p.title}{' '}
-                <span className="italic text-muted-foreground">{p.venue}</span>{' '}
-                <Badge variant="secondary" className="text-xs align-middle">
-                  {p.status}
-                </Badge>
-                <LinkButton href={p.link} />
-              </p>
-            </div>
-          ))}
-        </div>
-
         {/* Research reports */}
         <div className="space-y-4">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
