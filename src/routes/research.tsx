@@ -245,6 +245,9 @@ function Research() {
               <p className="text-sm leading-relaxed flex-1">
                 {highlightName(p.authors)} {p.title}{' '}
                 <span className="italic text-muted-foreground">{p.venue}</span>
+                {p.status && (
+                  <span className="text-muted-foreground"> {p.status}.</span>
+                )}
                 <LinkButton href={p.link} />
               </p>
             </div>
