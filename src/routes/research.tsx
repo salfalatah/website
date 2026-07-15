@@ -234,35 +234,27 @@ function Research() {
       <section className="space-y-8">
         <h2 className="text-2xl font-semibold text-foreground">Publications</h2>
 
-        {/* Peer-reviewed */}
-         <p className="text-sm leading-relaxed flex-1">
+      {/* Peer-reviewed */}
+<div className="space-y-4">
+  <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
+    Peer-Reviewed Articles
+  </h3>
+  {PEER_REVIEWED.map((p, i) => (
+    <div key={i} className="flex gap-4">
+      <span className="text-sm text-muted-foreground w-12 shrink-0">{p.year}</span>
+      <p className="text-sm leading-relaxed flex-1">
         {p.status && (
-        <span className="mr-2 inline-block rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800 align-middle">
-        {p.status}
-       </span>
-    )}
-  {highlightName(p.authors)} {p.title}{' '}
-  <span className="italic text-muted-foreground">{p.venue}</span>
-  <LinkButton href={p.link} />
-</p>
-          <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
-            Peer-Reviewed Articles
-          </h3>
-          {PEER_REVIEWED.map((p, i) => (
-            <div key={i} className="flex gap-4">
-              <span className="text-sm text-muted-foreground w-12 shrink-0">{p.year}</span>
-              <p className="text-sm leading-relaxed flex-1">
-                {highlightName(p.authors)} {p.title}{' '}
-                <span className="italic text-muted-foreground">{p.venue}</span>
-                {p.status && (
-                  <span className="text-muted-foreground"> {p.status}.</span>
-                )}
-                <LinkButton href={p.link} />
-              </p>
-            </div>
-          ))}
-        </div>
-
+          <span className="mr-2 inline-block rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800 align-middle">
+            {p.status}
+          </span>
+        )}
+        {highlightName(p.authors)} {p.title}{' '}
+        <span className="italic text-muted-foreground">{p.venue}</span>
+        <LinkButton href={p.link} />
+      </p>
+    </div>
+  ))}
+</div>
         {/* Research reports */}
         <div className="space-y-4">
           <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
