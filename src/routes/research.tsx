@@ -23,14 +23,6 @@ function highlightName(authors: string) {
 // To add a link to any entry, set its `link` to the real URL.
 // An empty string ('') shows no link button.
 const PEER_REVIEWED = [
-  {
-    year: '2025',
-    authors: 'Vietto, N., Armstrong, T., Schroll, D., & Al Falatah, S.',
-    title:
-      'Differences in associations between autonomic nervous system activity and psychopathic traits across stress paradigms and measures.',
-    venue: 'Psychopathology & Behavioral Assessment, 47(1), 1–12.',
-    link: 'https://link.springer.com/article/10.1007/s10862-024-10185-6',
-  },
    {
     year: '2026',
     status: 'Forthcoming',
@@ -39,6 +31,14 @@ const PEER_REVIEWED = [
       'Beyond risk factors: A mixed-methods study of interpersonal dynamics in suicide attempts and reattempts from police narratives.',
     venue: 'Health & Justice.',
     link: '',
+  },
+  {
+    year: '2025',
+    authors: 'Vietto, N., Armstrong, T., Schroll, D., & Al Falatah, S.',
+    title:
+      'Differences in associations between autonomic nervous system activity and psychopathic traits across stress paradigms and measures.',
+    venue: 'Psychopathology & Behavioral Assessment, 47(1), 1–12.',
+    link: 'https://link.springer.com/article/10.1007/s10862-024-10185-6',
   },
 ]
 
@@ -235,7 +235,16 @@ function Research() {
         <h2 className="text-2xl font-semibold text-foreground">Publications</h2>
 
         {/* Peer-reviewed */}
-        <div className="space-y-4">
+         <p className="text-sm leading-relaxed flex-1">
+        {p.status && (
+        <span className="mr-2 inline-block rounded bg-amber-100 px-1.5 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-amber-800 align-middle">
+        {p.status}
+       </span>
+    )}
+  {highlightName(p.authors)} {p.title}{' '}
+  <span className="italic text-muted-foreground">{p.venue}</span>
+  <LinkButton href={p.link} />
+</p>
           <h3 className="text-sm font-semibold uppercase tracking-wide text-primary">
             Peer-Reviewed Articles
           </h3>
