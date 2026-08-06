@@ -148,7 +148,7 @@ function Home() {
         <h2 className="text-2xl font-semibold text-foreground mb-4">Updates</h2>
         <div className="space-y-3">
           {[
-            { date: 'August 2026', text: 'Publication: A mixed-methods study of suicide attempts' },
+      { date: 'August 2026', text: <a href="https://link.springer.com/article/10.1186/s40352-026-00443-y" target="_blank" rel="noopener noreferrer" className="underline underline-offset-4 hover:text-primary">Publication: A mixed-methods study of suicide attempts</a> },
             { date: 'June 2026', text: 'Completed a 4-Day Data Visualization Workshop' },
             { date: 'March 2026', text: 'Doctoral Student Summit Fellow, ACJS' },
           ].map((item, i) => (
