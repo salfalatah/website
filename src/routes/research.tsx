@@ -308,6 +308,12 @@ function Research() {
             <div key={i} className="flex gap-4">
               <span className="text-sm text-muted-foreground w-12 shrink-0">{p.year}</span>
               <p className="text-sm leading-relaxed flex-1">
+                {p.note && (
+            <span className="text-muted-foreground"> {p.note}.</span>
+            {p.status && (
+              <span className="mr-2 inline-block rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary align-middle">
+          {p.status}
+            </span>
                 {highlightName(p.authors)} {p.title}{' '}
                 <span className="italic text-muted-foreground">{p.venue}</span>
                 {p.note && (
