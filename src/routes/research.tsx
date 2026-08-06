@@ -108,6 +108,15 @@ const RESEARCH_REPORTS = [
 ]
 
 const PRESENTATIONS = [
+   {
+    year: '2026',
+     status: 'Upcoming',
+    authors: 'Al Falatah, S., Richards, T., Gillespie, L., Evans, C., & Campbell, A.',
+    title:
+      'ENCOMPASS: An Evaluation of a Hospital-Based Violence Intervention Program in Nebraska',
+    venue: 'American Society of Criminology, Chicago.',
+    note: '',
+  },
   {
     year: '2026',
     authors: 'Al Falatah, S.',
