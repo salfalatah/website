@@ -25,12 +25,12 @@ function highlightName(authors: string) {
 const PEER_REVIEWED = [
    {
     year: '2026',
-    status: 'Forthcoming',
+    status: 'Open Access',
       authors: 'Al Falatah, S., Tostlebe, J., & Hashimi, S.',
     title:
       'Beyond risk factors: A mixed-methods study of interpersonal dynamics in suicide attempts and reattempts from police narratives.',
     venue: 'Health & Justice.',
-    link: '',
+    link: 'https://link.springer.com/article/10.1186/s40352-026-00443-y',
   },
   {
     year: '2025',
