@@ -148,9 +148,9 @@ function Home() {
         <h2 className="text-2xl font-semibold text-foreground mb-4">Updates</h2>
         <div className="space-y-3">
           {[
+            { date: 'August 2026', text: 'Publication: A mixed-methods study of suicide attempts' },
             { date: 'June 2026', text: 'Completed a 4-Day Data Visualization Workshop' },
             { date: 'March 2026', text: 'Doctoral Student Summit Fellow, ACJS' },
-            { date: 'October 2025', text: 'Awarded a Graduate Research and Creative Activity Grant' },
           ].map((item, i) => (
             <div key={i} className="flex gap-4 text-sm">
               <span className="text-muted-foreground whitespace-nowrap w-28 shrink-0">{item.date}</span>
